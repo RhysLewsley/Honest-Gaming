@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-### As a **user**  I want to **action** so that *result*.
+### As a *user*  I want to *action* so that *result*.
 
 #### Acceptance criteria
 
