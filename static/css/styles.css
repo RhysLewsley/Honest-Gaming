@@ -1,0 +1,91 @@
+/* Gold navbar background */
+.navbar {
+    background-color: #D4AF37;
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 12px;
+}
+
+.navbar-elements {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px 0 12px;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar-elements .form-control {
+    font-weight: bold;
+}
+
+.navbar-elements .btn {
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: black;
+    font-weight: bold;
+}
+
+.nav-link-pad {
+    padding-left: 0;
+    padding-right: 5px !important;
+}
+
+.navbar .nav-link:hover {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+}
+
+.games-list {
+    color: rgb(0, 239, 203);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+main {
+    min-height: 80vh;
+    padding: 20px;
+    flex: 1;
+}
+
+footer {
+    background-color: #D4AF37;
+    padding: 20px 0;
+    text-align: center;
+    /* margin-top: 30px; */
+}
+
+.games-list {
+    color: #D4AF37;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.text-color {
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
