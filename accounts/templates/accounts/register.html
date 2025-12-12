@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register - Honest Gaming{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card auth-card">
+                <div class="card-header auth-card-header">
+                    <h3 class="text-center mb-0">Create Account</h3>
+                </div>
+                <div class="card-body auth-card-body">
+                    {% if error %}
+                        <div class="alert alert-danger alert-dismissible fade show no-auto-dismiss" role="alert">
+                            {% for field, errors in error.items %}
+                                <strong>{{ field }}:</strong>
+                                {% for err in errors %}
+                                    <div>{{ err }}</div>
+                                {% endfor %}
+                            {% endfor %}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+
+                    <form method="POST" novalidate>
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="id_username" class="form-label">Username</label>
+                            {{ form.username }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_email" class="form-label">Email Address</label>
+                            {{ form.email }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_password1" class="form-label">Password</label>
+                            {{ form.password1 }}
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="id_password2" class="form-label">Confirm Password</label>
+                            {{ form.password2 }}
+                        </div>
+
+                        <button type="submit" class="btn btn-login w-100 mb-3">Create Account</button>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span>Already have an account?</span>
+                    </div>
+
+                    <a href="{% url 'login' %}" class="btn btn-register w-100">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
