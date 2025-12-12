@@ -13,6 +13,7 @@ def login_view(request):
         
         if user is not None:
             login(request, user)
+            messages.success(request, f"Welcome back, {user.username}!")
             return redirect('home')
         else:
             error = 'Invalid username or password.'
@@ -26,6 +27,7 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+            messages.success(request, f"Welcome aboard, {user.username}!")
             return redirect('home')
         else:
             error = form.errors
