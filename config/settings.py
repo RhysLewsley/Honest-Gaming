@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'gamepost',
     'accounts',
+    'review',
 ]
 
 MIDDLEWARE = [
