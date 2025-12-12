@@ -12,9 +12,14 @@ def game_detail(request, slug):
     """
     game = get_object_or_404(GamePost, slug=slug)
     reviews = game.reviews.all()  # Get all reviews for this game
-    
+    # Determine if the logged-in user has already reviewed this game
+    has_review = False
+    if request.user.is_authenticated:
+        has_review = reviews.filter(created_by=request.user).exists()
+
     context = {
         'game': game,
         'reviews': reviews,
+        'has_review': has_review,
     }
     return render(request, 'gamepost/game_detail.html', context)
