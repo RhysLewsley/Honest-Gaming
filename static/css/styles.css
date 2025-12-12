@@ -38,7 +38,7 @@
 }
 
 .navbar .nav-link:hover {
-    color: #333;
+    color: #ffffff;
 }
 
 a {
@@ -89,4 +89,25 @@ footer {
     color: #000000;
     font-weight: bold;
     text-align: center;
+}
+
+.review-text {
+    color: #D4AF37;
+    font-weight: bold;
+}
+
+/* Ensure gold review text even inside Bootstrap cards */
+.card .review-text,
+.review-text.card-text {
+    color: #D4AF37 !important;
+}
+
+/* Make all text in review form gold */
+.review-form-container,
+.review-form-container h2,
+.review-form-container label,
+.review-form-container p,
+.review-form-container small,
+.review-form-container .form-label {
+    color: #D4AF37 !important;
 }
