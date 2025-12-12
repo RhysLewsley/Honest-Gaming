@@ -8,7 +8,13 @@ def home(request):
 
 def game_detail(request, slug):
     """
-    Display details for a single game using its slug.
+    Display details for a single game using its slug with reviews.
     """
     game = get_object_or_404(GamePost, slug=slug)
-    return render(request, 'gamepost/game_detail.html', {"game": game})
+    reviews = game.reviews.all()  # Get all reviews for this game
+    
+    context = {
+        'game': game,
+        'reviews': reviews,
+    }
+    return render(request, 'gamepost/game_detail.html', context)
