@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 def login_view(request):
+    error = None
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -13,9 +14,9 @@ def login_view(request):
             login(request, user)
             return redirect('home')
         else:
-            messages.error(request, 'Invalid username or password.')
+            error = 'Invalid username or password.'
     
-    return render(request, 'accounts/login.html', {})
+    return render(request, 'accounts/login.html', {'error': error})
 
 def logout_view(request):
     logout(request)
