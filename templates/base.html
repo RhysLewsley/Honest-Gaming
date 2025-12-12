@@ -22,8 +22,8 @@
                     <span class="nav-link px-0 me-2 nav-link-pad">Welcome, {{ user.username }}!</span>
                 {% endif %}
 
-                <form class="d-flex ms-3 me-2" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <form class="d-flex ms-3 me-2" role="search" method="GET" action="{% url 'home' %}">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search" />
                     <button class="btn" type="submit">Search</button>
                 </form>
 
