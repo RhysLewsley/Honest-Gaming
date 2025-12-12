@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 from gamepost.models import GamePost
@@ -27,6 +28,10 @@ def create_review(request, slug):
             review.game = game
             review.created_by = request.user
             review.save()
+            if is_update:
+                messages.success(request, 'Your review has been updated.')
+            else:
+                messages.success(request, 'Your review has been submitted.')
             return redirect('game-detail', slug=slug)
     else:
         form = ReviewForm(instance=review)
