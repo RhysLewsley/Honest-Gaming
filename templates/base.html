@@ -19,8 +19,8 @@
             <div class="d-flex align-items-center navbar-elements">
                 <a class="navbar-brand" href="{% url 'home' %}">Honest Gaming</a>
 
-                <form class="d-flex ms-3 me-2" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <form class="d-flex ms-3 me-2" role="search" method="GET" action="{% url 'home' %}">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search" />
                     <button class="btn" type="submit">Search</button>
                 </form>
 
