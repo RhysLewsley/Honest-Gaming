@@ -17,6 +17,15 @@
                     <p class="card-text">
                         {{ game.synopsis }}
                     </p>
+
+                    <div class="mt-3 text-center">
+                        <div style="font-size: 14px; color: #666;">
+                            {% with avg_rating=game.get_average_rating rating_count=game.get_rating_count %}
+                                <strong>★ {{ avg_rating }}/5</strong>
+                                <span style="font-size: 12px;">({{ rating_count }} {% if rating_count == 1 %}rating{% else %}ratings{% endif %})</span>
+                            {% endwith %}
+                        </div>
+                    </div>
                     
                     <div class="mt-4 text-center">
                         <a href="{% url 'home' %}" class="btn" style="background-color: black; color: #D4AF37;">Back to Games</a>
