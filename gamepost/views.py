@@ -1,9 +1,13 @@
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
 from .models import GamePost
 
 # Create your views here.
 def home(request):
     posts = GamePost.objects.select_related('created_by').all()
+    query = request.GET.get('q', '')
+    if query:
+        posts = posts.filter(Q(title__icontains=query) | Q(synopsis__icontains=query))
     return render(request, 'home/index.html', {"posts": posts})
 
 def game_detail(request, slug):
