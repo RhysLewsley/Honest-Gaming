@@ -1,0 +1,156 @@
+/* Accounts App Styling */
+
+/* Authentication Cards */
+.auth-card {
+    background-color: #1a1a1a;
+    border: 2px solid #D4AF37;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.auth-card-header {
+    background-color: #D4AF37;
+    border-bottom: 2px solid #D4AF37;
+}
+
+.auth-card-header h3 {
+    color: #000;
+    font-weight: bold;
+}
+
+.auth-card-body {
+    padding: 2rem;
+}
+
+/* Form Labels */
+.auth-card .form-label {
+    color: #D4AF37;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Controls */
+.auth-card .form-control {
+    background-color: #2a2a2a;
+    border: 1px solid #D4AF37;
+    color: #fff;
+    padding: 0.75rem;
+    font-weight: 500;
+}
+
+.auth-card .form-control::placeholder {
+    color: #888;
+}
+
+.auth-card .form-control:focus {
+    background-color: #2a2a2a;
+    border-color: #D4AF37;
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+
+.auth-card .form-control.is-invalid {
+    border-color: #ff6b6b;
+}
+
+.auth-card .form-control.is-invalid:focus {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+}
+
+/* Error Messages */
+.auth-card .invalid-feedback {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Buttons */
+.btn-login {
+    background-color: #D4AF37;
+    border-color: #D4AF37;
+    color: #000;
+    font-weight: bold;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #c9a02c;
+    border-color: #c9a02c;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-register {
+    background-color: transparent;
+    border: 2px solid #D4AF37;
+    color: #D4AF37;
+    font-weight: bold;
+    padding: 0.65rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #D4AF37;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Divider */
+.auth-divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #888;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #D4AF37, transparent);
+    z-index: -1;
+}
+
+.auth-divider span {
+    background-color: #1a1a1a;
+    padding: 0 1rem;
+}
+
+/* Alert Messages */
+.auth-card .alert {
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.alert-success {
+    background-color: #1a3a1a;
+    border: 1px solid #2d5a2d;
+    color: #90ee90;
+}
+
+.alert-error {
+    background-color: #3a1a1a;
+    border: 1px solid #5a2d2d;
+    color: #ff9999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-card {
+        margin: 1rem;
+    }
+    
+    .auth-card-body {
+        padding: 1.5rem;
+    }
+}
