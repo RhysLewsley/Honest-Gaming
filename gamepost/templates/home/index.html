@@ -15,7 +15,7 @@
                             <img src="{{ post.gameimage.url }}" class="card-img-top" alt="{{ post.title }} image">
                         {% endif %}
                         <div class="card-body">
-                            <p class="card-text">{{ post.synopsis }}</p>
+                            <p class="card-text">{{ post.synopsis|truncatewords:15 }}… more</p>
                         </div>
                     </div>
                 </div>
