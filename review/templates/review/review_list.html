@@ -1,0 +1,31 @@
+{% for review in reviews %}
+    <div class="card mb-3 border-light">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <h5 class="card-title mb-1">
+                        {{ review.created_by.username }}
+                        <span class="badge bg-warning text-dark ms-2">{{ review.rating }} ★</span>
+                    </h5>
+                    <p class="card-subtitle mb-2 small">
+                        {{ review.created_at|date:"M d, Y \a\t g:i A" }}
+                    </p>
+                </div>
+                {% if user == review.created_by %}
+                    <div class="btn-group-vertical btn-group-sm">
+                        <a href="{% url 'create-review' slug=game.slug %}" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <form method="post" action="{% url 'delete-review' slug=game.slug review_id=review.id %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-sm btn-outline-danger w-100" onclick="return confirm('Are you sure?');">Delete</button>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+            <p class="card-text mt-3 review-text">{{ review.review_text }}</p>
+        </div>
+    </div>
+{% empty %}
+    <div class="alert alert-info text-center">
+        <p>No reviews yet. Be the first to review this game!</p>
+    </div>
+{% endfor %}
